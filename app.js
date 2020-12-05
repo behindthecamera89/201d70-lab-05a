@@ -34,13 +34,13 @@ Test this function by hand in the console to get it working, and when you think 
 function multiply(a, b) { //eslint-disable-line
   var message = `The product of ${a} and ${b} is 45.`;
   var testMultiply = a * b;
-  console.log(testMultiply, message);
-  return[testMultiply, message];
+  // console.log(testMultiply, message);
+  return [testMultiply, message];
 }
 
 
 // Here is the test for multiply(); uncomment it to run it
-testMultiply(5,9);
+testMultiply(5, 9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -57,11 +57,20 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
+  var sum1 = sum(a, b)[0];
+  var sum2 = sum(c, sum1)[0];
+  var someMessage = `${a} and ${b} and ${c} sum to ${sum2}.`;
+  var multiOne = multiply(a, b)[0];
+  var multiTwo = multiply(c, multiOne)[0];
+  var multiMessage = `The product of ${a} and ${b} and ${c} is ${multiTwo}.`;
 
+  // console.log(sum2, multiTwo, someMessage, multiMessage);
+
+  return [sum2, multiTwo, someMessage, multiMessage];
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -125,7 +134,7 @@ This function should be dynamic, accepting an array of any length.
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyAnyArray() function and see if the test passes.*/
 
 // Write your code here
-var testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
+var testDynamicArray = [1, 2, 3, 4, 5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
 
